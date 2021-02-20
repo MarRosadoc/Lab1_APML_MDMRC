@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Lab1_1084120_1070720.Models.Jugadores>
+
+@{
+    ViewData["Title"] = "ImportarCSV";
+}
+
+<h1>Importar Archivo</h1>
+
+<h4> Subir Archivo</h4>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Jugadores" asp-action="ImportarCSV">
+    <input type="file" name="ArchivoCSV" />
+    <p>
+
+
+
+    </p>
+    <button type="submit">Subir archivo CSV</button>
+
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("Tiempo de ejecución " + tiempos + " milisegundos";
+            };
+        </script>
+    }
+</form>

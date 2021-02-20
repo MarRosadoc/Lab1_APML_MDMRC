@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Agregar Jugadores a la Lista";
+}
+
+<div class="text-center">
+    <p>
+
+    </p>
+    <p>
+
+    </p>
+    <h1 class="display-4">Agregue los Jugadores a la Lista Seleccionada</h1>
+
+    <div class="btn-group" role="group">
+        <a asp-controller="Jugadores" asp-action="CrearJugador"
+           class="btn btn-primary">
+            Agregar Manualmente
+        </a>
+    </div>
+
+
+
+    <div class="btn-group" role="group">
+        <a asp-controller="Jugadores" asp-action="ImportarCSV"
+           class="btn btn-primary">
+            Importar Archivo CSV
+        </a>
+    </div>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("Tiempo de ejecución " + tiempos + " milisegundos";
+            };
+        </script>
+    }
+
+
+</div>

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Lab1_1084120_1070720.Models.Jugadores>
+
+@{
+    ViewData["Title"] = "Busquedas";
+}
+
+<h1>Buscar Jugadores</h1>
+
+
+<form asp-controller="Jugadores" asp-action="Busquedas">
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="Nombre"> Nombre
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="Apellido">Apellido
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="Posicion">Posicion
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="SalarioMayor"> Salario Mayor
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="SalarioMenor">Salario Menor
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="SalarioIgual">Salario Igual
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="Filtros" id="Filtros" value="Club">Club
+        </label>
+    </div>
+    <input class="form-control" type="search" value="" placeholder="Search" aria-label="Search" name="TextoBusqueda">
+    <button class="btn btn-outline-info" role="button" type="submit">Buscar</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Club)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Posicion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Club)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar Jugador", "EditarJugador", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles Jugador", "DetallesJugador", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar Jugador", "EliminarJugador", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+        @if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    alert("Tiempo de ejecución " + tiempos + " milisegundos";
+                };
+            </script>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Lab1_1084120_1070720.Models.Jugadores>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listado de Jugadores</h1>
+
+
+<a asp-action="CrearJugador" class="btn btn-outline-info " role="button">Crear Nuevo Jugador</a>
+
+
+<a asp-action="Busquedas" class="btn btn-outline-info " role="button">Buscar Jugadores</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Club)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Posicion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Club)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar Jugador", "EditarJugador", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles Jugador", "DetallesJugador", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar Jugador", "EliminarJugador", new { id = item.Id })
+                </td>
+            </tr>
+        }
+        @if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    alert("Tiempo de ejecución " + tiempos + " milisegundos";
+                };
+            </script>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,5 @@
+      
+Importar Archivo de CSV, Tiempo empleado en milisegundos System.Diagnostics.Stopwatch
+Tiempo de ejecución de operación en milisegundos: 6      
+Buscar a Jugador, Tiempo empleado en milisegundos System.Diagnostics.Stopwatch
+Tiempo de ejecución de operación en milisegundos: 0
